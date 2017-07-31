@@ -1,0 +1,1 @@
+mongoexport -hweiyinfu.cn -uwyf -phaha -dpoem -cpoem -o bak-poem.json --pretty --jsonArray

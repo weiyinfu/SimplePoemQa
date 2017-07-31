@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>诗词小强</title>
+    <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+    <script src="http://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        textarea {
+            font-family: 楷体;
+            font-size: 25px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div><textarea id="cout" rows="10" readonly></textarea>
+        <br>
+        <textarea id="cin" rows="4"></textarea>
+    </div>
+</div>
+</body>
+<script>
+    $("#cin").keydown(function (e) {
+        if (e.keyCode == 13) {
+            var s = $("#cin").val();
+            $("#cin").val("");
+            $("#cout").val($("#cout").val() + "我说：" + s + "\n");
+            $("#cout")[0].scrollTop = $("#cout")[0].scrollHeight
+            $.get("haha", {q: s}, function (resp) {
+                $("#cout").val($("#cout").val() + "haha：" + resp + "\n");
+                $("#cout")[0].scrollTop = $("#cout")[0].scrollHeight
+            });
+            return false;
+        }
+    })
+</script>
+</html>
