@@ -41,3 +41,6 @@ QueryHandler，QueryHandler调用Query的handle()方法处理请求。
 本系统比较复杂和核心的地方就是QueryParser（查询解析器），需要把用户的查询进行分词。  
 比如用户说：“背背李白的静夜思”，解析成：<李白,诗人> <静夜思,题目>，忽略“背背”和“的”  
 这样的字。
+
+为了便于本地测试，直接运行QueryHandler就可以。QueryHandler会调用MyApplication的  
+init方法进行初始化。
